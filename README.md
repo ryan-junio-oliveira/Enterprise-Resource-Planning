@@ -24,4 +24,4 @@ Como Contribuir
 
 Licença
 
-Este projeto está licenciado sob a Licença MIT - sinta-se livre para utilizar, modificar e distribuir conforme necessário.
+Este projeto está licenciado sob a Licença "a definir"
