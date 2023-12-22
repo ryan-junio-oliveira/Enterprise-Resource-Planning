@@ -1,8 +1,5 @@
 <?php 
 
-
-
-
 $usuario = 'ryan';
 $senha = 'ryan';
 
@@ -14,7 +11,6 @@ if($username == $usuario && $pass == $senha){
   session_start();
   $_SESSION['nome'] = 'ryan';
   echo json_encode(400);
-  
 }else{
   echo json_encode(404);
 }
