@@ -1,0 +1,2 @@
+Todos os arquivos do projeto devem ser chamados a partir da raiz do projeto
+mesmo que um javascript esteja no mesmo diretorio que o arquivo php, o arquivo php nao consegue carrega-lo, uma vez que o arquivo php esta sendo chamado no index, atraves das rotas.
