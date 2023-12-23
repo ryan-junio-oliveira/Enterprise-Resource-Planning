@@ -1,17 +1,7 @@
-<?php
-
-use App\Core\LoadFiles;
-
-LoadFiles::component('panel', 'userlogin');
-?>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-custom">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="caminho/para/sua/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+    <a class="navbar-brand" href="/">
+      <h2 class="text-center" style="color:white">Enterprise Resource Planing</h2>
     </a>
-    <div class="navbar-text ms-auto">
-      <span><?php echo $_SESSION['name']; ?></span>
-    </div>
   </div>
 </nav>

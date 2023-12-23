@@ -1,10 +1,5 @@
 <?php
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 use App\Core\LoadFiles;
-
 ?>
 
 <!doctype html>
@@ -18,10 +13,24 @@ use App\Core\LoadFiles;
 </head>
 
 <body>
-  <?php LoadFiles::component('panel', 'navbar'); ?>
-  <?php LoadFiles::component('panel', 'sidebar'); ?>
-  <h1>Painel</h1>
+  <?php LoadFiles::component('panel', 'userlogin'); ?>
+  <main>
+    <aside>
+      <?php LoadFiles::component('panel', 'sidebar'); ?>
+    </aside>
+    <section>
+      <?php LoadFiles::component('panel', 'navbar'); ?>
+      <?php LoadFiles::component('panel', 'modules'); ?>
+    </section>
+  </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </html>
+
+<style>
+  main {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+  }
+</style>

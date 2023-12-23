@@ -3,6 +3,7 @@
 namespace App\Routes;
 
 use App\Core\LoadFiles;
+use App\login\Controllers\LogoutController;
 
 abstract class RouterSwitch
 {
@@ -19,6 +20,11 @@ abstract class RouterSwitch
   protected function panel()
   {
     LoadFiles::view('panel', 'panel');
+  }
+  protected function logout()
+  {
+    LoadFiles::controller('login', 'logout');
+    LogoutController::logout();
   }
   public function __call($method, $args)
   {

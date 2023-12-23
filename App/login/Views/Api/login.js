@@ -1,4 +1,3 @@
-//DECLARAÇÃO DE VARIAVEIS
 var inputSubmit = document.getElementById("inputSubmit");
 var messageUsername = document.getElementById("message-username");
 var messagePassword = document.getElementById("message-password");
@@ -6,7 +5,6 @@ var regexSpecialCharacters = /[^a-zA-Z0-9]/;
 var form = document.getElementById("formLogin");
 var messageLogin = document.getElementById("message-login");
 
-//FUNÇÕES
 function removeMessagesAlert(message) {
   setTimeout(() => {
     message.innerHTML = "";
@@ -55,7 +53,6 @@ function validatePassword() {
   return false;
 }
 
-//FUNÇÃO QUE ENVIA O FORMULARIO
 async function submitForm(form) {
   formData = new FormData(form);
   var url = "./App/login/Controllers/LoginController.php";
@@ -65,10 +62,9 @@ async function submitForm(form) {
     body: formData,
   }).then(function (res) {
     res.json().then(function (data) {
-      console.log(data); //! Retirar
       switch (data) {
         case 400:
-          window.location.href = "./panel";
+          window.location.href = "/panel";
           break;
         case 404:
           messageLogin.innerHTML = "Usuário ou senha incorretos";
