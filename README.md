@@ -20,7 +20,7 @@ Este projeto está licenciado sob a Licença "a definir"
 
 Toda a aplicação se concentra dentro do diretorio App
 
-* App
+App
 
     admin - refere-se a parte administrativa do sistema
     core - possui classes importantes que otimizam ações rotineiras
