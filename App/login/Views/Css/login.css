@@ -1,0 +1,10 @@
+.div-form{
+  width: 30rem;
+}
+
+@media (max-width: 576px) {
+  .div-form {
+    width: 100%;
+    padding: 3rem;
+  }
+}

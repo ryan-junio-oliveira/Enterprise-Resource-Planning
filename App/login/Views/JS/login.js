@@ -21,14 +21,14 @@ function validateUsername() {
       "The user field cannot contain special characters";
     messageUsername.style.color = "red";
     removeMessagesAlert(messageUsername);
-    return true;
+    return;
   }
 
-  if (username === "") {
+  if (username == "") {
     messageUsername.innerHTML = "The username field cannot be empty";
     messageUsername.style.color = "red";
     removeMessagesAlert(messageUsername);
-    return true;
+    return;
   }
 
   return false;
@@ -42,14 +42,14 @@ function validatePassword() {
       "The password field cannot contain special characters";
     messagePassword.style.color = "red";
     removeMessagesAlert(messagePassword);
-    return true;
+    return;
   }
 
-  if (password === "") {
+  if (password == "") {
     messagePassword.innerHTML = "The password field cannot be empty";
     messagePassword.style.color = "red";
     removeMessagesAlert(messagePassword);
-    return true;
+    return;
   }
 
   return false;
@@ -58,21 +58,21 @@ function validatePassword() {
 //FUNÇÃO QUE ENVIA O FORMULARIO
 async function submitForm(form) {
   formData = new FormData(form);
-  var url = "./App/Controllers/LoginController.php";
+  var url = "./App/login/Controllers/LoginController.php";
 
   await fetch(url, {
     method: "POST",
     body: formData,
   }).then(function (res) {
     res.json().then(function (data) {
-      console.log(data);
-      switch (data){
+      console.log(data); //! Retirar
+      switch (data) {
         case 400:
-          window.location.href =  "./App/Views/Pages/Home.php";
+          window.location.href = "./panel";
           break;
         case 404:
-          messageLogin.innerHTML =  "Usuário ou senha incorretos";
-          messageLogin.style.color =  "red";
+          messageLogin.innerHTML = "Usuário ou senha incorretos";
+          messageLogin.style.color = "red";
           messageLogin.style.textAlign = "center";
           break;
       }
@@ -81,12 +81,14 @@ async function submitForm(form) {
 }
 
 inputForm.addEventListener("click", () => {
+
+  validateUsername();
+  validatePassword();
+
   let userReturn = validateUsername();
   let passReturn = validateUsername();
 
-  if (userReturn === true || passReturn === true) {
-    console.log("formulario não enviado!");
-  } else {
+  if (userReturn === false && passReturn === false) {
     submitForm(form);
   }
 });
